@@ -37,7 +37,7 @@ function StudentHomePage() {
     const response = await checkCoursePurchaseInfoService(
       getCurrentCourseId,
       auth?.user?._id
-    );  
+    );
     if (response?.success) {
       if (response?.data) {
         navigate(`/course-progress/${getCurrentCourseId}`);
