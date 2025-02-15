@@ -92,6 +92,7 @@ function StudentViewCoursesPage() {
       getCurrentCourseId,
       auth?.user?._id
     );
+    console.log(response, "response");
 
     if (response?.success) {
       if (response?.data) {

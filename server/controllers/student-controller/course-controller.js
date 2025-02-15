@@ -1,3 +1,4 @@
+const { compare } = require("bcryptjs");
 const Course = require("../../models/Course");
 const StudentCourses = require("../../models/StudentCourses");
 
@@ -94,7 +95,12 @@ const checkCoursePurchaseInfo = async (req, res) => {
     const studentCourses = await StudentCourses.findOne({
       userId: studentId,
     });
-
+    if(studentCourses === null){
+      return res.status(200).json({
+        success: true,
+        data: false,
+      });
+    }
     const ifStudentAlreadyBoughtCurrentCourse =
       studentCourses.courses.findIndex((item) => item.courseId === id) > -1;
     res.status(200).json({
