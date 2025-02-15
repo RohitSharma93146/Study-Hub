@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { useContext } from "react";
 import { AuthContext } from "@/context/auth-context";
+import logo4 from "../../assets/logo4.svg";
 
 function StudentViewCommonHeader() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function StudentViewCommonHeader() {
     <header className="flex items-center justify-between p-4 border-b relative">
       <div className="flex items-center space-x-4">
         <Link to="/home" className="flex items-center hover:text-black">
-          <GraduationCap className="h-8 w-8 mr-4 " />
+          <img src={logo4} alt="Logo" className="h-20 w-20" />
           <span className="font-extrabold md:text-xl text-[14px]">
             Study Hub
           </span>
